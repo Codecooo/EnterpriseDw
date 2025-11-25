@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS EnterpriseDw;
+
+CREATE SCHEMA bronze;
+
+CREATE SCHEMA silver;
+
+CREATE SCHEMA gold;
