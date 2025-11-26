@@ -17,6 +17,8 @@ DECLARE
 
     ms numeric(12,3);
 BEGIN
+    RAISE NOTICE 'Truncating tables...';
+
     TRUNCATE bronze.crm_cust_info,
              bronze.crm_sales_details,
              bronze.crm_prd_info,
@@ -25,7 +27,6 @@ BEGIN
              bronze.erp_cust_az12;
 
     total_start := clock_timestamp();
-    RAISE NOTICE 'Truncating tables...';
 
     RAISE NOTICE '-----------------------------';
     RAISE NOTICE '      Loading Bronze Data';
