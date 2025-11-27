@@ -11,6 +11,8 @@ CREATE TABLE silver.crm_cust_info (
     dwh_created_at      TIMESTAMP DEFAULT now()
 );
 
+CALL mooncake.create_table('silver.crm_cust_info_columnar', 'silver.crm_cust_info');
+
 CREATE TABLE silver.crm_sales_details (
     sls_ord_num     VARCHAR(50),
     sls_prd_key     VARCHAR(150),
@@ -24,6 +26,8 @@ CREATE TABLE silver.crm_sales_details (
     dwh_created_at  TIMESTAMP DEFAULT now()
 );
 
+CALL mooncake.create_table('silver.crm_sales_details_columnar', 'silver.crm_sales_details');
+
 CREATE TABLE silver.crm_prd_info (
     prd_id          INT,
     cat_id          VARCHAR(150),
@@ -36,6 +40,8 @@ CREATE TABLE silver.crm_prd_info (
     dwh_created_at  TIMESTAMP DEFAULT now()
 );
 
+CALL mooncake.create_table('silver.crm_prd_info_columnar', 'silver.crm_prd_info');
+
 -- This is used to create the table for the ERP in silver schema
 
 CREATE TABLE silver.erp_px_cat_g1v2 (
@@ -46,11 +52,15 @@ CREATE TABLE silver.erp_px_cat_g1v2 (
     dwh_created_at  TIMESTAMP DEFAULT now()
 );
 
+CALL mooncake.create_table('silver.erp_px_cat_g1v2_columnar', 'silver.erp_px_cat_g1v2');
+
 CREATE TABLE silver.erp_loc_a101 (
     cid             TEXT,
     cntry           VARCHAR(150),
     dwh_created_at  TIMESTAMP DEFAULT now()
 );
+
+CALL mooncake.create_table('silver.erp_loc_a101_columnar', 'silver.erp_loc_a101');
 
 CREATE TABLE silver.erp_cust_az12 (
     cid             TEXT,
@@ -58,3 +68,5 @@ CREATE TABLE silver.erp_cust_az12 (
     gen             VARCHAR(50),
     dwh_created_at  TIMESTAMP DEFAULT now()
 );
+
+CALL mooncake.create_table('silver.erp_cust_az12_columnar', 'silver.erp_cust_az12');

@@ -1,4 +1,6 @@
-CREATE DATABASE IF NOT EXISTS EnterpriseDw;
+CREATE DATABASE enterprise_dw;
+
+\c enterprise_dw
 
 CREATE SCHEMA bronze;
 
